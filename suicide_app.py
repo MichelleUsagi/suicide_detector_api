@@ -1,47 +1,46 @@
-import streamlit as st 
+import streamlit as st
 from PIL import Image
 import os
 from datetime import datetime
 import pandas as pd
-
 import tensorflow as tf
 import json
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-# Load model
-model = tf.keras.models.load_model("models/suicide_detector_model.h5") 
+# Loading the trained model
+model = tf.keras.models.load_model("models/suicide_detector_model.h5")
 
-# Load tokenizer
+# Loading the tokenizer from JSON file
 with open("models/tokenizer.json", "r") as f:
     tokenizer_json = json.load(f)
     tokenizer = tokenizer_from_json(tokenizer_json)
 
-# Text preprocessing
+# Defining text preprocessing function
 def preprocess_text(text, max_len=200):
     sequence = tokenizer.texts_to_sequences([text])
     padded = pad_sequences(sequence, maxlen=max_len)
     return padded
 
-# File paths
+# Defining file paths
 LOGO_PATH = "logo.png"
 CSV_LOG_FILE = "prediction_logs.csv"
 FEEDBACK_FILE = "feedback_log.csv"
 
-# Page setup
+# Setting up the Streamlit app layout and metadata
 st.set_page_config(page_title="MindMate – Emotional Support App", page_icon="🧠", layout="wide")
 
-# Load logo
+# Displaying the logo if available
 if os.path.exists(LOGO_PATH):
     st.image(LOGO_PATH, width=120)
 
-# Title
+# Displaying the app title and subtitle
 st.markdown("""
     <h1 style='text-align: center; color: #2c3e50;'>MindMate</h1>
     <h4 style='text-align: center; color: #34495e;'>Your supportive companion for emotional check-ins</h4>
 """, unsafe_allow_html=True)
 
-# Tabs
+# Creating the tab structure
 menu = st.tabs(["💬 Chatbot", "📜 History", "📝 Feedback"])
 
 # -------------------------
@@ -50,12 +49,15 @@ menu = st.tabs(["💬 Chatbot", "📜 History", "📝 Feedback"])
 with menu[0]:
     st.subheader("Chat with MindMate")
 
+    # Initializing chat history if not already stored in session
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
+    # Creating input field for single message
     st.markdown("##### Single Message")
     user_input = st.text_input("You:", "", key="chat_input")
 
+    # Processing single input message on button click
     if st.button("Send"):
         if user_input.strip():
             try:
@@ -65,21 +67,29 @@ with menu[0]:
                 label = "🚨 High Risk" if prediction == 1 else "✅ Low Risk"
                 reply = f"Prediction: {label} | Confidence: {prob:.2f}"
 
-                # Save to history
+                # Appending message and reply to session state
                 st.session_state.chat_history.append((user_input, reply))
 
-                # Save to CSV
+                # Displaying the response to user immediately
+                st.markdown(f"**You:** {user_input}")
+                st.markdown(f"<div style='margin-left:20px;color:#2c3e50;'>💡 <i>{reply}</i></div>", unsafe_allow_html=True)
+
+                # Logging prediction to CSV file
                 with open(CSV_LOG_FILE, "a", encoding="utf-8") as f:
                     timestamp = datetime.now().isoformat()
                     f.write(f"{timestamp},{user_input},{prediction},{prob:.2f}\n")
 
             except Exception as e:
-                st.session_state.chat_history.append((user_input, f"Error: {e}"))
+                error_msg = f"Error: {e}"
+                st.session_state.chat_history.append((user_input, error_msg))
+                st.error(error_msg)
 
+    # Creating text area for analyzing multiple messages
     st.markdown("---")
     st.markdown("##### Analyze Multiple Messages")
     multi_input = st.text_area("Paste messages (one per line):", height=200)
 
+    # Processing batch inputs when button is clicked
     if st.button("Analyze All"):
         if multi_input.strip():
             messages = multi_input.strip().split("\n")
@@ -95,7 +105,7 @@ with menu[0]:
                         st.markdown(f"<span style='color:#2c3e50'>Prediction: {label} – Confidence: {prob:.2f}</span>", unsafe_allow_html=True)
                         st.markdown("---")
 
-                        # Log to CSV
+                        # Logging prediction to CSV
                         with open(CSV_LOG_FILE, "a", encoding="utf-8") as f:
                             timestamp = datetime.now().isoformat()
                             f.write(f"{timestamp},{msg},{prediction},{prob:.2f}\n")
@@ -109,6 +119,7 @@ with menu[0]:
 with menu[1]:
     st.subheader("Prediction History")
 
+    # Displaying current session chat log
     if st.session_state.chat_history:
         st.markdown("#### Current Session Log:")
         for user_msg, bot_msg in reversed(st.session_state.chat_history):
@@ -116,6 +127,7 @@ with menu[1]:
             st.markdown(f"<div style='margin-left:20px;color:#2c3e50;'>💡 <i>{bot_msg}</i></div>", unsafe_allow_html=True)
         st.markdown("---")
 
+    # Loading and displaying log file if available
     if os.path.exists(CSV_LOG_FILE):
         try:
             history_df = pd.read_csv(CSV_LOG_FILE, header=None, names=["Timestamp", "Input", "Prediction", "Confidence"])
@@ -134,6 +146,7 @@ with menu[1]:
 with menu[2]:
     st.subheader("Provide Feedback")
 
+    # Creating feedback text area and submission button
     feedback_text = st.text_area("Your Feedback:", "", key="feedback_input")
     if st.button("Submit Feedback", key="submit_feedback_button"):
         if feedback_text.strip():
