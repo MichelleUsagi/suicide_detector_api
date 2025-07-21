@@ -74,7 +74,29 @@ with menu[0]:
         st.markdown(f"**You:** {user_msg}")
         st.markdown(f"<div style='margin-left:20px;color:#2c3e50;'>💡 <i>{bot_msg}</i></div>", unsafe_allow_html=True)
 
+
 # Tab 2 - History
 with menu[1]:
     st.subheader("Prediction History")
-    if os.path.exists(CSV_LO_
+    if os.path.exists(CSV_LOG_FILE): # <-- This is the corrected line
+        try:
+            history_df = pd.read_csv(CSV_LOG_FILE, header=None, names=["Timestamp", "Input", "Prediction", "Confidence"])
+            st.dataframe(history_df)
+        except pd.errors.EmptyDataError:
+            st.info("No prediction history yet.")
+    else:
+        st.info("No prediction history yet.")
+
+# Tab 3 - Feedback
+with menu[2]:
+    st.subheader("Provide Feedback")
+    feedback_text = st.text_area("Your Feedback:", "")
+    if st.button("Submit Feedback"):
+        if feedback_text.strip():
+            with open(FEEDBACK_FILE, "a", encoding="utf-8") as f:
+                timestamp = datetime.now().isoformat()
+                f.write(f"{timestamp},{feedback_text}\n")
+            st.success("Thank you for your feedback!")
+            feedback_text = "" # Clear the text area
+        else:
+            st.warning("Please enter some feedback.")
