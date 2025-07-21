@@ -1,6 +1,4 @@
-fastapi
-uvicorn
-tensorflow
-joblib
-numpy
-pydantic
+streamlit==1.35.0
+tensorflow==2.14.0
+pandas==2.2.2
+pillow==10.3.0
