@@ -1,0 +1,40 @@
+2025-07-19 16:51:37,944 - WARNING - From C:\Users\HP\Documents\Flatiron\suicide_detector_api\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2025-07-19 16:52:41,934 - INFO - Input:  i wanna die | Output: {'prediction': 0, 'probability': 0.40661805868148804, 'message': 'Low risk'}
+2025-07-19 16:52:58,371 - INFO - Input:  i wan't to die | Output: {'prediction': 1, 'probability': 0.6827805638313293, 'message': 'High risk'}
+2025-07-19 16:53:25,858 - INFO - Input:  i feel overwhelmed lately | Output: {'prediction': 0, 'probability': 0.2928161025047302, 'message': 'Low risk'}
+2025-07-19 16:53:37,373 - INFO - Input:  i feel overwhelmed with life lately | Output: {'prediction': 1, 'probability': 0.6255117654800415, 'message': 'High risk'}
+2025-07-19 16:54:09,416 - INFO - Input:  my cousin visted but was depressed...how can i help her | Output: {'prediction': 1, 'probability': 0.6492423415184021, 'message': 'High risk'}
+2025-07-19 16:54:32,877 - INFO - Input:  each day life gets hard | Output: {'prediction': 0, 'probability': 0.4005852937698364, 'message': 'Low risk'}
+2025-07-19 16:54:57,666 - INFO - Input:  each day life gets hard. I feel like ending it.  | Output: {'prediction': 1, 'probability': 0.8742438554763794, 'message': 'High risk'}
+2025-07-19 16:56:32,801 - INFO - Input: I feel like giving up on everything. | Output: {'prediction': 0, 'probability': 0.46056482195854187, 'message': 'Low risk'}
+2025-07-19 16:56:57,329 - INFO - Input: I feel like giving up on life. | Output: {'prediction': 0, 'probability': 0.557988703250885, 'message': 'Low risk'}
+2025-07-19 16:57:11,360 - INFO - Input: I feel like giving up . | Output: {'prediction': 0, 'probability': 0.2800234854221344, 'message': 'Low risk'}
+2025-07-19 16:57:32,890 - INFO - Input: I feel like giving up on life. i am overwhelmed with everything. | Output: {'prediction': 1, 'probability': 0.8649044036865234, 'message': 'High risk'}
+2025-07-19 16:57:52,437 - INFO - Input: I want to kill myself. | Output: {'prediction': 1, 'probability': 0.8983078002929688, 'message': 'High risk'}
+2025-07-19 16:58:17,498 - INFO - Input: Sometimes i feel like hurting myself. | Output: {'prediction': 0, 'probability': 0.3116025924682617, 'message': 'Low risk'}
+2025-07-19 16:58:36,306 - INFO - Input: I feel like hurting myself. | Output: {'prediction': 0, 'probability': 0.3529920279979706, 'message': 'Low risk'}
+2025-07-19 16:59:01,109 - INFO - Input: I am tired. | Output: {'prediction': 0, 'probability': 0.3405720889568329, 'message': 'Low risk'}
+2025-07-19 16:59:11,738 - INFO - Input: I am tired of life. | Output: {'prediction': 1, 'probability': 0.7637790441513062, 'message': 'High risk'}
+2025-07-19 16:59:30,812 - INFO - Input: I am okay. | Output: {'prediction': 0, 'probability': 0.20666688680648804, 'message': 'Low risk'}
+2025-07-19 16:59:47,665 - INFO - Input: I feel hopeless. | Output: {'prediction': 1, 'probability': 0.7152506113052368, 'message': 'High risk'}
+2025-07-19 17:15:15,060 - WARNING - From C:\Users\HP\Documents\Flatiron\suicide_detector_api\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2025-07-19 18:05:31,375 - WARNING - From C:\Users\HP\Documents\Flatiron\suicide_detector_api\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2025-07-19 18:09:14,734 - INFO - Input: i am tired of life | Output: {'prediction': 1, 'probability': 0.7637790441513062, 'message': 'High risk'}
+2025-07-19 18:23:40,196 - WARNING - From C:\Users\HP\Documents\Flatiron\suicide_detector_api\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2025-07-19 18:24:22,547 - INFO - Input: i want to die | Output: {'prediction': 1, 'probability': 0.7376968860626221, 'message': 'High risk'}
+2025-07-19 18:25:35,977 - INFO - Input: i am tired | Output: {'prediction': 0, 'probability': 0.3405720889568329, 'message': 'Low risk'}
+2025-07-19 18:25:53,316 - INFO - Input: i am tired of life | Output: {'prediction': 1, 'probability': 0.7637790441513062, 'message': 'High risk'}
+2025-07-19 18:26:45,656 - INFO - Input: i am tired  | Output: {'prediction': 0, 'probability': 0.3405720889568329, 'message': 'Low risk'}
+2025-07-19 18:44:21,862 - WARNING - From C:\Users\HP\Documents\Flatiron\suicide_detector_api\venv\Lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2025-07-19 18:49:07,418 - INFO - Prediction: {'timestamp': '2025-07-19T18:49:07.418148', 'input_text': 'i feel tired and overwhelmed with life', 'prediction': 1, 'probability': 0.8400616645812988, 'message': 'High risk'}
+2025-07-19 19:59:48,935 - INFO - Prediction: {'timestamp': '2025-07-19T19:59:48.934827', 'input_text': 'i feel tired and overwhelmed with life', 'prediction': 1, 'probability': 0.8400616645812988, 'message': 'High risk'}
+2025-07-19 20:08:08,361 - INFO - Prediction: {'timestamp': '2025-07-19T20:08:08.360156', 'input_text': 'i feel tired and overwhelmed with life', 'prediction': 1, 'probability': 0.8400616645812988, 'message': 'High risk'}
+2025-07-20 13:52:54,911 - INFO - Prediction: {'timestamp': '2025-07-20T13:52:54.911572', 'input_text': 'i an tired', 'prediction': 0, 'probability': 0.3405720889568329, 'message': 'Low risk'}
+2025-07-21 08:13:00,011 - INFO - Prediction: {'timestamp': '2025-07-21T08:13:00.008770', 'input_text': "I feel like life is pointless and I can't go on", 'prediction': 1, 'probability': 0.8525663614273071, 'message': 'High risk'}
+2025-07-21 08:26:14,131 - INFO - Prediction: {'timestamp': '2025-07-21T08:26:14.131892', 'input_text': "I feel like life is pointless and I can't go on", 'prediction': 1, 'probability': 0.8525663614273071, 'message': 'High risk'}
+2025-07-21 11:19:35,033 - INFO - Prediction: {'timestamp': '2025-07-21T11:19:35.023227', 'input_text': "I feel like life is pointless and I can't go on", 'prediction': 1, 'probability': 0.8525663614273071, 'message': 'High risk'}

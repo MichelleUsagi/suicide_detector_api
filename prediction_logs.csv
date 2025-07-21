@@ -1,0 +1,31 @@
+timestamp,input_text,prediction,probability,message
+2025-07-19T16:52:41.932946, i wanna die,0,0.40661805868148804,Low risk
+2025-07-19T16:52:58.370779, i wan't to die,1,0.6827805638313293,High risk
+2025-07-19T16:53:25.856587, i feel overwhelmed lately,0,0.2928161025047302,Low risk
+2025-07-19T16:53:37.373208, i feel overwhelmed with life lately,1,0.6255117654800415,High risk
+2025-07-19T16:54:09.413147, my cousin visted but was depressed...how can i help her,1,0.6492423415184021,High risk
+2025-07-19T16:54:32.876779, each day life gets hard,0,0.4005852937698364,Low risk
+2025-07-19T16:54:57.654639, each day life gets hard. I feel like ending it. ,1,0.8742438554763794,High risk
+2025-07-19T16:56:32.801512,I feel like giving up on everything.,0,0.46056482195854187,Low risk
+2025-07-19T16:56:57.329625,I feel like giving up on life.,0,0.557988703250885,Low risk
+2025-07-19T16:57:11.360816,I feel like giving up .,0,0.2800234854221344,Low risk
+2025-07-19T16:57:32.890021,I feel like giving up on life. i am overwhelmed with everything.,1,0.8649044036865234,High risk
+2025-07-19T16:57:52.437271,I want to kill myself.,1,0.8983078002929688,High risk
+2025-07-19T16:58:17.498935,Sometimes i feel like hurting myself.,0,0.3116025924682617,Low risk
+2025-07-19T16:58:36.304232,I feel like hurting myself.,0,0.3529920279979706,Low risk
+2025-07-19T16:59:01.109599,I am tired.,0,0.3405720889568329,Low risk
+2025-07-19T16:59:11.738356,I am tired of life.,1,0.7637790441513062,High risk
+2025-07-19T16:59:30.810016,I am okay.,0,0.20666688680648804,Low risk
+2025-07-19T16:59:47.665525,I feel hopeless.,1,0.7152506113052368,High risk
+2025-07-19T18:09:14.734442,i am tired of life,1,0.7637790441513062,High risk
+2025-07-19T18:24:22.547157,i want to die,1,0.7376968860626221,High risk
+2025-07-19T18:25:35.975392,i am tired,0,0.3405720889568329,Low risk
+2025-07-19T18:25:53.316737,i am tired of life,1,0.7637790441513062,High risk
+2025-07-19T18:26:45.650612,i am tired ,0,0.3405720889568329,Low risk
+2025-07-19T18:49:07.418148,i feel tired and overwhelmed with life,1,0.8400616645812988,High risk
+2025-07-19T19:59:48.934827,i feel tired and overwhelmed with life,1,0.8400616645812988,High risk
+2025-07-19T20:08:08.360156,i feel tired and overwhelmed with life,1,0.8400616645812988,High risk
+2025-07-20T13:52:54.911572,i an tired,0,0.3405720889568329,Low risk
+2025-07-21T08:13:00.008770,I feel like life is pointless and I can't go on,1,0.8525663614273071,High risk
+2025-07-21T08:26:14.131892,I feel like life is pointless and I can't go on,1,0.8525663614273071,High risk
+2025-07-21T11:19:35.023227,I feel like life is pointless and I can't go on,1,0.8525663614273071,High risk

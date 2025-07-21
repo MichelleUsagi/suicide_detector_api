@@ -1,0 +1,8 @@
+Model: MLP for Suicide Ideation Detection
+Tokenizer: Keras Tokenizer with num_words=10000, oov_token=<OOV>
+Input length: 200
+Embedding dim: 50
+Loss: binary_crossentropy
+Metrics: accuracy
+Trained with: class weights to handle label imbalance
+
