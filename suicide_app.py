@@ -17,7 +17,7 @@ with open("models/tokenizer.json", "r") as f:
     tokenizer_json = json.load(f)
     tokenizer = tokenizer_from_json(tokenizer_json)
 
-def preprocess_text(text, max_len=100):
+def preprocess_text(text, max_len=200):
     sequence = tokenizer.texts_to_sequences([text])
     padded = pad_sequences(sequence, maxlen=max_len)
     return padded
